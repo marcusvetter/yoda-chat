@@ -1,0 +1,43 @@
+{
+  "name": "yoda-chat",
+  "version": "0.0.1",
+  "author": "Simon Acker and Marcus Vetter",
+  "description": "Yoda Chat",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "postinstall": "typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcusvetter/yoda-chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcusvetter/yoda-chat/issues"
+  },
+  "homepage": "https://github.com/marcusvetter/yoda-chat#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.13",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.4",
+    "zone.js": "^0.6.8"
+  },
+  "devDependencies": {
+    "bootstrap": "^3.3.6",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "jade": "^1.11.0",
+    "jade-html-loader": "0.0.3",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.7.5",
+    "typings": "^0.7.12",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13"
+  }
+}
