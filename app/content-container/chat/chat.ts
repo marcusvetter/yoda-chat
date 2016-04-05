@@ -1,12 +1,15 @@
-import {Component, Input} from "angular2/core";
+import {Component, Input, OnInit, AfterViewChecked, ViewChild, ElementRef} from "angular2/core";
 import {Message} from "./message/message";
 import {ChatMode} from "./chat-mode";
 import {MessageInput} from "./message-input/message-input";
+import {ChatService} from "./chat-service";
+import {ChatMessage} from "./chat-message";
 
 @Component({
     selector: 'chat',
+    providers: [ChatService],
     template: `
-        <div class="container content-container">
+        <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
                     <message *ngFor="#message of messages" text="{{message.yodaText}}" author="{{message.author}}"></message>
@@ -21,37 +24,37 @@ import {MessageInput} from "./message-input/message-input";
         }
         
         .content-container {
-            max-height: 300px;
+            max-height: 490px;
             overflow-y: auto;
         }
     `]
 })
-export class Chat {
-    @Input() mode:ChatMode;
+export class Chat implements OnInit, AfterViewChecked {
+    @Input() private mode:ChatMode;
+    @ViewChild('scrollContainer') private scrollContainer:ElementRef;
 
-    private messages:any[];
+    private messages:ChatMessage[];
 
-    constructor() {
-        this.messages = [
-            {
-                yodaText: 'Yoda Text',
-                jediText: 'Jedi Text',
-                author: 'Someone'
-            },
-            {
-                yodaText: 'Yoda Text 2',
-                jediText: 'Jedi Text 2',
-                author: 'Sometwo'
-            },
-            {
-                yodaText: 'Yoda Text 3',
-                jediText: 'Jedi Text 3',
-                author: 'Somethreee'
-            }
-        ]
+    constructor(chatService: ChatService) {
+        this.messages = chatService.getMessages();
     }
 
-    public onSendMessage(message:string):void {
-        alert(message);
+    ngOnInit() {
+        this.scrollToBottom();
+    }
+
+    ngAfterViewChecked() {
+        this.scrollToBottom();
+    }
+
+    scrollToBottom():void {
+        try {
+            this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+        } catch (e) {
+        }
+    }
+
+    onSendMessage(message:string):void {
+        this.messages.push(new ChatMessage(message, message, this.mode === ChatMode.YODA ? 'Yoda' : 'A Jedi'));
     }
 }
