@@ -1,12 +1,6 @@
 .container.yoda-chat-content-container
     .row
         .col-sm-8.yoda-chat-main
-            message(text='My first message', author='Jedi')
-            message(text='My second message', author='Yoda')
+            message(*ngFor="#message of messages", text="{{message.yodaText}}", author="{{message.author}}")
 
-.yoda-chat-message-input-container
-    .container
-        .input-group
-            input.form-control(type="text", placeholder="Your message...")
-            span.input-group-btn
-                button.btn.btn-secondary(type="button") Send
+message-input
