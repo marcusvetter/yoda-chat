@@ -1,0 +1,145 @@
+/*
+ * Globals
+ */
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #555;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+.container {
+  max-width: 45rem;
+}
+
+/*
+ * Header name and description
+ */
+.yoda-chat-header {
+  text-align: center;
+  padding-top: 1rem;
+  background-color: #f9f9f9;
+}
+
+.yoda-chat-title {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.yoda-chat-description {
+  font-size: 1.3rem;
+  color: #999;
+}
+
+@media (min-width: 40em) {
+  .yoda-chat-title {
+    font-size: 3.5rem;
+  }
+}
+
+/*
+ * Nav
+ */
+
+.yoda-chat-nav-container {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+/* Nav links */
+
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #bdcddb;
+  &:hover, &:focus {
+    color: #fff;
+    background-color: transparent;
+  }
+  &.active {
+    color: #fff;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -.5rem;
+      vertical-align: middle;
+      content: "";
+      border-right: .5rem solid transparent;
+      border-bottom: .5rem solid;
+      border-left: .5rem solid transparent;
+    }
+  }
+}
+
+
+/*
+ * Content
+ */
+.yoda-chat-content-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.yoda-chat-msg-container {
+  margin-bottom: 2.5rem;
+}
+
+.yoda-chat-msg {
+  margin-bottom: .25rem;
+  font-size: 1.5rem;
+}
+
+.yoda-chat-msg-meta {
+  margin-bottom: 1.25rem;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/*
+ * Message Input
+ */
+.yoda-chat-message-input-container {
+  background-color: #f9f9f9;
+  -webkit-box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+  height: 60px;
+  padding-top: 12px;
+}
+
+
+/*
+ * Footer
+ */
+
+.yoda-chat-footer {
+  padding: 2.5rem 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  p {
+    margin-bottom: 0;
+  }
+}

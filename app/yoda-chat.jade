@@ -1,1 +1,31 @@
-Yoda Chat *yay*
+.yoda-chat-header
+    .container
+        h1.yoda-chat-title The Yoda-Chat
+        p.lead.yoda-chat-description Here, Yoda and Jedis can chat ;-)
+.yoda-chat-nav-container
+    .container
+        nav.nav.yoda-chat-nav
+            a.nav-link.active(href='#') I am Yoda
+            a.nav-link(href='#') I am a Jedi
+.container.yoda-chat-content-container
+    .row
+        .col-sm-8.yoda-chat-main
+            .yoda-chat-msg-container
+                h2.yoda-chat-msg Sample Message
+                p.yoda-chat-msg-meta
+                    | January 1, 2014 by Jedi
+            .yoda-chat-msg-container
+                h2.yoda-chat-msg Sample Message 2
+                p.yoda-chat-msg-meta
+                    | January 1, 2014 by Yoda
+.yoda-chat-message-input-container
+    .container
+        .input-group
+            input.form-control(type="text", placeholder="Your message...")
+            span.input-group-btn
+                button.btn.btn-secondary(type="button") Send
+
+footer.yoda-chat-footer
+    p
+        | By mave&#64;
+        a(href='http://zuehlke.com') zuehlke
