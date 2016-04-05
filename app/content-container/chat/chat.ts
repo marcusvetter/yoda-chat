@@ -3,13 +3,28 @@ import {Message} from "./message/message";
 import {ChatMode} from "./chat-mode";
 import {MessageInput} from "./message-input/message-input";
 
-const TEMPLATE = require('./chat.jade');
-const STYLE = require('./chat.scss');
-
 @Component({
     selector: 'chat',
-    template: `<style>${STYLE}</style>${TEMPLATE}`,
-    directives: [Message, MessageInput]
+    template: `
+        <div class="container content-container">
+            <div class="row">
+                <div class="col-sm-8 yoda-chat-main">
+                    <message *ngFor="#message of messages" text="{{message.yodaText}}" author="{{message.author}}"></message>
+                </div>
+            </div>
+        </div>
+        <message-input (onSendMessage)="onSendMessage($event)"></message-input>`,
+    directives: [Message, MessageInput],
+    styles: [`
+        .container {
+            max-width: 45rem;
+        }
+        
+        .content-container {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    `]
 })
 export class Chat {
     @Input() mode:ChatMode;
