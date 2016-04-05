@@ -18,7 +18,6 @@ export class ContentContainer {
     }
 
     getChatMode(): ChatMode {
-        console.log('getChatMode(): ', this.chatMode);
         return this.chatMode;
     }
 

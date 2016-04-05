@@ -19,7 +19,6 @@ export class ChatService {
 
     public getMessages(mode: ChatMode): Array<ChatMessage> {
         // TODO: Fetch messages
-        console.log('getMessages(' + mode + ')');
         return this.messages.map(m => this.convertMessage(mode, m));
     }
 
@@ -29,7 +28,7 @@ export class ChatService {
 
     // TODO: JUST FOR TEST PURPOSES!!
     private convertMessage(mode: ChatMode, chatMessage: ChatMessage): ChatMessage {
-        chatMessage.text = chatMessage.text.replace(/by.*$/, '') + ' by ' + mode;
+        chatMessage.text =  chatMessage.text && chatMessage.text.replace(/by.*$/, '') + ' by ' + mode;
         return chatMessage;
     }
 

@@ -6,9 +6,9 @@ import {Component, Output, EventEmitter} from "angular2/core";
         <div class="input-container">
             <div class="container">
                 <div class="input-group">
-                    <input #message (keyup.enter)="sendMessage(message.value)" type="text" placeholder="Your message..." class="form-control"/>
+                    <input #message (keyup.enter)="sendMessage(message)" type="text" placeholder="Your message..." class="form-control"/>
                     <span class="input-group-btn">
-                        <button (click)="sendMessage(message.value)" type="button" class="btn btn-secondary">Send</button>
+                        <button (click)="sendMessage(message)" type="button" class="btn btn-secondary">Send</button>
                     </span>
                 </div>
             </div>
@@ -29,7 +29,8 @@ import {Component, Output, EventEmitter} from "angular2/core";
 export class MessageInput {
     @Output() onSendMessage = new EventEmitter();
 
-    public sendMessage(message: string): void {
-        this.onSendMessage.emit(message);
+    public sendMessage(inputElem: HTMLInputElement): void {
+        this.onSendMessage.emit(inputElem.value);
+        inputElem.value = null;
     }
 }
