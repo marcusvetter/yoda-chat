@@ -7,5 +7,5 @@ const STYLE = require('./footer-container.scss');
     selector: 'footer-container',
     template: `<style>${STYLE}</style>${TEMPLATE}`
 })
-export class FooterContainerComponent {
+export class FooterContainer {
 }

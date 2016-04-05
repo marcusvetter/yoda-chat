@@ -7,5 +7,5 @@ const STYLE = require('./header-container.scss');
     selector: 'header-container',
     template: `<style>${STYLE}</style>${TEMPLATE}`
 })
-export class HeaderContainerComponent {
+export class HeaderContainer {
 }

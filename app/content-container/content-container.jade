@@ -3,17 +3,13 @@
         nav.nav.yoda-chat-nav
             a.nav-link.active(href='#') I am Yoda
             a.nav-link(href='#') I am a Jedi
+
 .container.yoda-chat-content-container
     .row
         .col-sm-8.yoda-chat-main
-            .yoda-chat-msg-container
-                h2.yoda-chat-msg Sample Message
-                p.yoda-chat-msg-meta
-                    | January 1, 2014 by Jedi
-            .yoda-chat-msg-container
-                h2.yoda-chat-msg Sample Message 2
-                p.yoda-chat-msg-meta
-                    | January 1, 2014 by Yoda
+            message(text='My first message', author='Jedi')
+            message(text='My second message', author='Yoda')
+
 .yoda-chat-message-input-container
     .container
         .input-group
