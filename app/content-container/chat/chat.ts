@@ -12,7 +12,7 @@ import {ChatMessage} from "./chat-message";
         <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
-                    <message *ngFor="#message of messages" text="{{message.yodaMessage}}" author="{{message.author}}"></message>
+                    <message *ngFor="#message of messages" text="{{message.text}}" author="{{message.author}}"></message>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export class Chat implements OnInit, AfterViewChecked {
     }
 
     refreshMessages(): void {
-        this.messages = this.chatService.getMessages();
+        this.messages = this.chatService.getMessages(this.mode);
     }
 
     ngOnInit(): void {

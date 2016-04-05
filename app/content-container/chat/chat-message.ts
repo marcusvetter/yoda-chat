@@ -1,6 +1,5 @@
 export class ChatMessage {
-    constructor(public yodaMessage: string,
-                public jediMessage: string,
+    constructor(public text: string,
                 public author: string) {
     }
 }

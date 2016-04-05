@@ -9,43 +9,21 @@ export class ChatService {
 
     constructor() {
         this.messages = [
-            new ChatMessage('Yoda Text1', 'Jedi Text1', 'Some1'),
-            new ChatMessage('Yoda Text2', 'Jedi Text2', 'Some2'),
-            new ChatMessage('Yoda Text3', 'Jedi Text3', 'Some3'),
-            new ChatMessage('Yoda Text4', 'Jedi Text4', 'Some4'),
-            new ChatMessage('Yoda Text5', 'Jedi Text5', 'Some5')
+            new ChatMessage('Message Text 1', 'Some 1'),
+            new ChatMessage('Message Text 2', 'Some 2'),
+            new ChatMessage('Message Text 3', 'Some 3'),
+            new ChatMessage('Message Text 4', 'Some 4'),
+            new ChatMessage('Message Text 5', 'Some 5')
         ];
     }
 
-    public getMessages(): Array<ChatMessage> {
-        return this.messages;
+    public getMessages(mode: ChatMode): Array<ChatMessage> {
+        // TODO: Fetch messages
+        return mode === ChatMode.YODA ? this.messages : this.messages;
     }
 
     public saveMessage(mode: ChatMode, message: string): void {
-        let author: string,
-            jediMessage: string,
-            yodaMessage: string;
-
-        if (mode === ChatMode.YODA) {
-            yodaMessage = message;
-            jediMessage = this.translateMessageToJediMessage(message);
-            author = 'Yoda';
-        } else {
-            yodaMessage = this.translateMessageToYodaMessage(message);
-            jediMessage = message;
-            author = 'Jedi';
-        }
-        this.messages.push(new ChatMessage(yodaMessage, jediMessage, author));
-    }
-
-    private translateMessageToYodaMessage(message: string): string {
-        // TODO: Translate to yoda message
-        return message;
-    }
-
-    private translateMessageToJediMessage(message: string): string {
-        // TODO: Translate to jedi message
-        return message;
+        this.messages.push(new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'Jedi'));
     }
 
 }
