@@ -12,7 +12,7 @@ import {ChatMessage} from "./chat-message";
         <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
-                    <message *ngFor="#message of messages" text="{{message.yodaText}}" author="{{message.author}}"></message>
+                    <message *ngFor="#message of messages" text="{{message.yodaMessage}}" author="{{message.author}}"></message>
                 </div>
             </div>
         </div>
@@ -30,31 +30,36 @@ import {ChatMessage} from "./chat-message";
     `]
 })
 export class Chat implements OnInit, AfterViewChecked {
-    @Input() private mode:ChatMode;
-    @ViewChild('scrollContainer') private scrollContainer:ElementRef;
+    @Input() private mode: ChatMode;
+    @ViewChild('scrollContainer') private scrollContainer: ElementRef;
 
-    private messages:ChatMessage[];
+    private messages: ChatMessage[];
 
-    constructor(chatService: ChatService) {
-        this.messages = chatService.getMessages();
+    constructor(private chatService: ChatService) {
+        this.refreshMessages()
     }
 
-    ngOnInit() {
+    refreshMessages(): void {
+        this.messages = this.chatService.getMessages();
+    }
+
+    ngOnInit(): void {
         this.scrollToBottom();
     }
 
-    ngAfterViewChecked() {
+    ngAfterViewChecked(): void {
         this.scrollToBottom();
     }
 
-    scrollToBottom():void {
+    scrollToBottom(): void {
         try {
             this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
         } catch (e) {
         }
     }
 
-    onSendMessage(message:string):void {
-        this.messages.push(new ChatMessage(message, message, this.mode === ChatMode.YODA ? 'Yoda' : 'A Jedi'));
+    onSendMessage(message: string): void {
+        this.chatService.saveMessage(this.mode, message);
+        this.refreshMessages();
     }
 }

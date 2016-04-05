@@ -29,7 +29,7 @@ import {Component, Output, EventEmitter} from "angular2/core";
 export class MessageInput {
     @Output() onSendMessage = new EventEmitter();
 
-    public sendMessage(message:string):void {
+    public sendMessage(message: string): void {
         this.onSendMessage.emit(message);
     }
 }

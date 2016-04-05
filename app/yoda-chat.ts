@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from "angular2/core";
 import {HeaderContainer} from "./header-container/header-container";
 import {FooterContainer} from "./footer-container/footer-container";
 import {ContentContainer} from "./content-container/content-container";
