@@ -1,6 +1,6 @@
 import {Injectable} from "angular2/core";
 import {ChatMessage} from "./chat-message";
-import {ChatMode} from "./chat-mode";
+import {ChatMode} from "./../chat-mode";
 
 @Injectable()
 export class ChatService {
@@ -19,11 +19,18 @@ export class ChatService {
 
     public getMessages(mode: ChatMode): Array<ChatMessage> {
         // TODO: Fetch messages
-        return mode === ChatMode.YODA ? this.messages : this.messages;
+        console.log('getMessages(' + mode + ')');
+        return this.messages.map(m => this.convertMessage(mode, m));
     }
 
     public saveMessage(mode: ChatMode, message: string): void {
         this.messages.push(new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'Jedi'));
+    }
+
+    // TODO: JUST FOR TEST PURPOSES!!
+    private convertMessage(mode: ChatMode, chatMessage: ChatMessage): ChatMessage {
+        chatMessage.text = chatMessage.text.replace(/by.*$/, '') + ' by ' + mode;
+        return chatMessage;
     }
 
 }

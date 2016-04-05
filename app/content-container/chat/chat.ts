@@ -1,6 +1,15 @@
-import {Component, Input, OnInit, AfterViewChecked, ViewChild, ElementRef} from "angular2/core";
+import {
+    Component,
+    Input,
+    OnInit,
+    AfterViewChecked,
+    ViewChild,
+    ElementRef,
+    OnChanges,
+    SimpleChange
+} from "angular2/core";
 import {Message} from "./message/message";
-import {ChatMode} from "./chat-mode";
+import {ChatMode} from "./../chat-mode";
 import {MessageInput} from "./message-input/message-input";
 import {ChatService} from "./chat-service";
 import {ChatMessage} from "./chat-message";
@@ -12,7 +21,7 @@ import {ChatMessage} from "./chat-message";
         <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
-                    <message *ngFor="#message of messages" text="{{message.text}}" author="{{message.author}}"></message>
+                    <message *ngFor="#message of messages" [text]="message.text" [author]="message.author"></message>
                 </div>
             </div>
         </div>
@@ -29,14 +38,13 @@ import {ChatMessage} from "./chat-message";
         }
     `]
 })
-export class Chat implements OnInit, AfterViewChecked {
-    @Input() private mode: ChatMode;
+export class Chat implements OnInit, AfterViewChecked, OnChanges {
+    @Input() mode: ChatMode;
     @ViewChild('scrollContainer') private scrollContainer: ElementRef;
 
     private messages: ChatMessage[];
 
     constructor(private chatService: ChatService) {
-        this.refreshMessages()
     }
 
     refreshMessages(): void {
@@ -56,6 +64,10 @@ export class Chat implements OnInit, AfterViewChecked {
             this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
         } catch (e) {
         }
+    }
+
+    ngOnChanges(changes: {[propName: string]: SimpleChange}) {
+        this.refreshMessages();
     }
 
     onSendMessage(message: string): void {
