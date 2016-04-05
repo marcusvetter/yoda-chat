@@ -3,4 +3,4 @@
         .col-sm-8.yoda-chat-main
             message(*ngFor="#message of messages", text="{{message.yodaText}}", author="{{message.author}}")
 
-message-input
+message-input((onSendMessage)="onSendMessage($event)")

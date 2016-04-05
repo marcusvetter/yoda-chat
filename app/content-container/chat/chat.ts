@@ -12,9 +12,9 @@ const STYLE = require('./chat.scss');
     directives: [Message, MessageInput]
 })
 export class Chat {
-    @Input() mode: ChatMode;
+    @Input() mode:ChatMode;
 
-    private messages: any[];
+    private messages:any[];
 
     constructor() {
         this.messages = [
@@ -31,8 +31,12 @@ export class Chat {
             {
                 yodaText: 'Yoda Text 3',
                 jediText: 'Jedi Text 3',
-                author: 'Somethree'
+                author: 'Somethreee'
             }
         ]
+    }
+
+    public onSendMessage(message:string):void {
+        alert(message);
     }
 }

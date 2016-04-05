@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, Output, EventEmitter} from "angular2/core";
 
 const TEMPLATE = require('./message-input.jade');
 const STYLE = require('./message-input.scss');
@@ -8,4 +8,9 @@ const STYLE = require('./message-input.scss');
     template: `<style>${STYLE}</style>${TEMPLATE}`
 })
 export class MessageInput {
+    @Output() onSendMessage = new EventEmitter();
+
+    public sendMessage(message:string): void {
+        this.onSendMessage.emit(message);
+    }
 }
