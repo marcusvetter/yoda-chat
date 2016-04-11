@@ -45,6 +45,11 @@ router.put('/messages', function (req, res) {
     }
     res.end();
 });
+router.delete('/messages', function (req, res) {
+    yodaMessages = [];
+    jediMessages = [];
+    res.end();
+});
 
 app.use('/', router);
 

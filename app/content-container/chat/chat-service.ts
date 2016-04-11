@@ -31,4 +31,8 @@ export class ChatService {
         let chatMessage: ChatMessage = new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'Jedi', Date.now());
         return this.http.put(`${ChatService.URL}?mode=${mode}`, JSON.stringify(chatMessage), this.requestOptions);
     }
+
+    public deleteAllMessages(): Observable<Response> {
+        return this.http.delete(ChatService.URL);
+    }
 }

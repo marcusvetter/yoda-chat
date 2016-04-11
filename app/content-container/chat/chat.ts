@@ -19,6 +19,9 @@ import {Response} from "angular2/http";
     selector: 'chat',
     providers: [ChatService],
     template: `
+        <div class="container control-container">
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteAllMessages()">Clear chat</button>
+        </div>
         <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
@@ -36,6 +39,11 @@ import {Response} from "angular2/http";
         .content-container {
             max-height: 490px;
             overflow-y: auto;
+        }
+        
+        .control-container {
+            margin-bottom: 1.5rem;
+            text-align: right;
         }
     `]
 })
@@ -77,5 +85,11 @@ export class Chat implements OnInit, AfterViewChecked, OnChanges {
         this.chatService
             .getMessages(this.mode)
             .subscribe(messages => this.messages = messages);
+    }
+
+    deleteAllMessages(): void {
+        this.chatService
+            .deleteAllMessages()
+            .subscribe(() => this.refreshMessages());
     }
 }
