@@ -48,7 +48,7 @@ router.put('/messages', function (req, res) {
 router.delete('/messages', function (req, res) {
     yodaMessages = [];
     jediMessages = [];
-    res.end();
+    res.end()
 });
 
 app.use('/', router);

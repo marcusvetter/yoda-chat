@@ -9,8 +9,8 @@ const STYLE = require('./tabs.scss');
                 <div class="yoda-chat-nav-container">
                     <div class="container">
                         <nav class="nav yoda-chat-nav">
-                            <a href="#" class="nav-link" [ngClass]="{active: isYodaMode()}" (click)="onYodaTabClick()">I am Yoda</a>
-                            <a href="#" class="nav-link" [ngClass]="{active: isJediMode()}" (click)="onJediTabClick()">I am a Jedi</a>
+                            <a id="jedi-tab" href="#" class="nav-link" [ngClass]="{active: isJediMode()}" (click)="onJediTabClick()">I am a Jedi</a>
+                            <a id="yoda-tab" href="#" class="nav-link" [ngClass]="{active: isYodaMode()}" (click)="onYodaTabClick()">I am Yoda</a>
                         </nav>
                     </div>
                 </div>`

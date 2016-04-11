@@ -11,7 +11,7 @@ import {ChatMode} from "./chat-mode";
 })
 export class ContentContainer {
 
-    private chatMode: ChatMode = ChatMode.YODA;
+    private chatMode: ChatMode = ChatMode.JEDI;
 
     onTabChange(chatMode: ChatMode) {
         this.chatMode = chatMode;

@@ -20,7 +20,7 @@ import {Response} from "angular2/http";
     providers: [ChatService],
     template: `
         <div class="container control-container">
-            <button type="button" class="btn btn-danger btn-sm" (click)="deleteAllMessages()">Clear chat</button>
+            <button id="clear-chat-btn" type="button" class="btn btn-danger btn-sm" (click)="deleteAllMessages()">Clear chat</button>
         </div>
         <div #scrollContainer class="container content-container">
             <div class="row">
