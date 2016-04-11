@@ -1,52 +1,25 @@
 var express = require('express');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var router = express.Router();
-
 var app = express();
 
-app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
 
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource');
+/**
+ *  MESSAGES
+ */
+var messages = [];
+router.get('/messages', function(req, res) {
+    console.log('[GET /messages]');
+    res.send(messages);
+});
+router.put('/messages', function (req, res) {
+    var message = req.body;
+    console.log('[PUT /messages]: ' + JSON.stringify(message));
+    messages.push(message);
+    res.end();
 });
 
-app.use('/ws', router);
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
-
+app.use('/', router);
 
 module.exports = app;
