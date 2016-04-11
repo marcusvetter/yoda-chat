@@ -27,6 +27,5 @@ import {Component, Input} from "angular2/core";
 export class Message {
     @Input() text: string;
     @Input() author: string;
-
-    public date: Date = new Date();
+    @Input() date: number;
 }

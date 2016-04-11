@@ -13,6 +13,7 @@ import {ChatMode} from "./../chat-mode";
 import {MessageInput} from "./message-input/message-input";
 import {ChatService} from "./chat-service";
 import {ChatMessage} from "./chat-message";
+import {Response} from "angular2/http";
 
 @Component({
     selector: 'chat',
@@ -21,7 +22,7 @@ import {ChatMessage} from "./chat-message";
         <div #scrollContainer class="container content-container">
             <div class="row">
                 <div class="col-sm-8 yoda-chat-main">
-                    <message *ngFor="#message of messages" [text]="message.text" [author]="message.author"></message>
+                    <message *ngFor="#message of messages" [text]="message.text" [author]="message.author" [date]="message.date"></message>
                 </div>
             </div>
         </div>
@@ -48,7 +49,8 @@ export class Chat implements OnInit, AfterViewChecked, OnChanges {
     }
 
     refreshMessages(): void {
-        this.messages = this.chatService.getMessages(this.mode);
+        this.chatService.getMessages(this.mode)
+            .subscribe((resp: Response) => this.messages = <ChatMessage[]> resp.json());
     }
 
     ngOnInit(): void {
@@ -71,7 +73,8 @@ export class Chat implements OnInit, AfterViewChecked, OnChanges {
     }
 
     onSendMessage(message: string): void {
-        this.chatService.saveMessage(this.mode, message);
-        this.refreshMessages();
+        this.chatService
+            .saveMessage(this.mode, message)
+            .subscribe(() => this.refreshMessages());
     }
 }
