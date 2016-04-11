@@ -23,12 +23,12 @@ export class ChatService {
 
     public getMessages(mode: ChatMode): Observable<ChatMessage[]> {
         return this.http
-            .get(ChatService.URL)
+            .get(`${ChatService.URL}?mode=${mode}`)
             .map((resp: Response) => <ChatMessage[]> resp.json());
     }
 
     public saveMessage(mode: ChatMode, message: string): Observable<Response> {
         let chatMessage: ChatMessage = new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'Jedi', Date.now());
-        return this.http.put(ChatService.URL, JSON.stringify(chatMessage), this.requestOptions);
+        return this.http.put(`${ChatService.URL}?mode=${mode}`, JSON.stringify(chatMessage), this.requestOptions);
     }
 }
