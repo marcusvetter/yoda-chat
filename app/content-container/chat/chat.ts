@@ -48,17 +48,16 @@ export class Chat implements OnInit, AfterViewChecked, OnChanges {
     constructor(private chatService: ChatService) {
     }
 
-    refreshMessages(): void {
-        this.chatService.getMessages(this.mode)
-            .subscribe((resp: Response) => this.messages = <ChatMessage[]> resp.json());
-    }
-
     ngOnInit(): void {
         this.scrollToBottom();
     }
 
     ngAfterViewChecked(): void {
         this.scrollToBottom();
+    }
+
+    ngOnChanges(changes: {[propName: string]: SimpleChange}) {
+        this.refreshMessages();
     }
 
     scrollToBottom(): void {
@@ -68,13 +67,15 @@ export class Chat implements OnInit, AfterViewChecked, OnChanges {
         }
     }
 
-    ngOnChanges(changes: {[propName: string]: SimpleChange}) {
-        this.refreshMessages();
-    }
-
     onSendMessage(message: string): void {
         this.chatService
             .saveMessage(this.mode, message)
             .subscribe(() => this.refreshMessages());
+    }
+
+    refreshMessages(): void {
+        this.chatService
+            .getMessages(this.mode)
+            .subscribe(messages => this.messages = messages);
     }
 }
