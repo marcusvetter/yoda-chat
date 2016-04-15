@@ -1,5 +1,5 @@
 /**
- 1. Take the first two or three words of a sentence, and just add them to the end. For example: 'You will find what you are looking for' turns into 'Find what you are looking for, you will.'
+ 1. Take the first two words of a sentence, and just add them to the end. For example: 'You will find what you are looking for' turns into 'Find what you are looking for, you will.'
  2. Adding a 'hmmmm...' at the end of an altered question. For example, 'Do you know what I am talking about?' turns into 'Know what I am talking about, do you? Hmmm...?'
  3. Adding a 'yes' to an altered statement. For example: 'You are here for my help' turns into 'Here for my help, you are... yes...'
  */
