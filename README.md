@@ -1,7 +1,7 @@
 # yoda-chat
 
 ## Prerequisites
-* **_npm install -g webpack webpack-dev-server protractor_**
+* **_npm install -g webpack webpack-dev-server protractor cucumber_**
 
 ## How to build/run
 * **_npm run start-backend_** for starting the application backend
