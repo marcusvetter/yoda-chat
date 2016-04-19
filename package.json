@@ -5,6 +5,7 @@
   "description": "Yoda Chat",
   "scripts": {
     "build": "webpack",
+    "start-backend": "node backend/server",
     "start": "webpack-dev-server --hot",
     "postinstall": "typings install"
   },
