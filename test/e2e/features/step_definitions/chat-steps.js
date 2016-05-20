@@ -6,35 +6,36 @@ var expect = chai.expect;
 
 module.exports = function() {
 
-    var CLEAR_CHAT_BUTTON_ID = 'clear-chat-btn',
+    var CHAT_URL = 'http://localhost:8080',
+        CLEAR_CHAT_BUTTON_ID = 'clear-chat-btn',
         MESSAGE_INPUT_ID = 'message-input',
         MESSAGE_SEND_BUTTON_ID = 'message-send-btn',
         MESSAGE_CLASS = 'message',
-        HUMAN_TAB_ID = 'human-tab',
         YODA_TAB_ID = 'yoda-tab';
 
-    this.Given(/^I open the Yoda Chat with an empty message history$/, function (callback) {
-        browser.get('http://localhost:8080');
+    function openChat() {
+        browser.get(CHAT_URL);
+    }
+
+    this.Given(/^As a human I open the chat with an empty message history$/, function (callback) {
+        openChat();
         element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
         callback();
     });
 
-    this.When(/^I switch to the yoda tab$/, function(callback) {
+    this.Given(/^As a human I open the chat$/, function (callback) {
+        openChat();
+        callback();
+    });
+
+    this.When(/^As a Yoda I open the chat$/, function(callback) {
+        openChat();
         element(by.id(YODA_TAB_ID)).click();
         callback();
     });
 
-    this.When(/^I switch to the human tab$/, function(callback) {
-        element(by.id(HUMAN_TAB_ID)).click();
-        callback();
-    });
-
-    this.When(/^I type the chat message "([^"]*)"$/, function (message, callback) {
+    this.When(/^I send the chat message "([^"]*)"$/, function (message, callback) {
         element(by.id(MESSAGE_INPUT_ID)).sendKeys(message);
-        callback();
-    });
-
-    this.When(/^send the message$/, function (callback) {
         element(by.id(MESSAGE_SEND_BUTTON_ID)).click();
         callback();
     });
