@@ -6,7 +6,7 @@ import {Component} from "angular2/core";
         <div class="header">
             <div class="container">
                 <h1 class="title">The Yoda-Chat</h1>
-                <p class="description">Here, Yoda and Jedis can chat ;-)</p>
+                <p class="description">The fastest chat for humans and Yoda on earth</p>
             </div>
         </div>`,
     styles: [`

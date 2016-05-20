@@ -9,7 +9,7 @@ const STYLE = require('./tabs.scss');
                 <div class="yoda-chat-nav-container">
                     <div class="container">
                         <nav class="nav yoda-chat-nav">
-                            <a id="jedi-tab" href="#" class="nav-link" [ngClass]="{active: isJediMode()}" (click)="onJediTabClick()">I am a Jedi</a>
+                            <a id="human-tab" href="#" class="nav-link" [ngClass]="{active: isHumanMode()}" (click)="onHumanTabClick()">I am a human</a>
                             <a id="yoda-tab" href="#" class="nav-link" [ngClass]="{active: isYodaMode()}" (click)="onYodaTabClick()">I am Yoda</a>
                         </nav>
                     </div>
@@ -22,16 +22,16 @@ export class Tabs {
     onYodaTabClick(): void {
         this.onTabChange.emit(ChatMode.YODA);
     }
-
-    onJediTabClick(): void {
-        this.onTabChange.emit(ChatMode.JEDI);
+    
+    onHumanTabClick(): void {
+        this.onTabChange.emit(ChatMode.HUMAN);
     }
 
     isYodaMode(): boolean {
         return this.mode === ChatMode.YODA;
     }
 
-    isJediMode(): boolean {
-        return this.mode === ChatMode.JEDI;
+    isHumanMode(): boolean {
+        return this.mode === ChatMode.HUMAN;
     }
 }

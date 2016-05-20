@@ -11,7 +11,7 @@ import {ChatMode} from "./chat-mode";
 })
 export class ContentContainer {
 
-    private chatMode: ChatMode = ChatMode.JEDI;
+    private chatMode: ChatMode = ChatMode.HUMAN;
 
     onTabChange(chatMode: ChatMode) {
         this.chatMode = chatMode;

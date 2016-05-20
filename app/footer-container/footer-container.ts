@@ -4,7 +4,7 @@ import {Component} from "angular2/core";
     selector: 'footer-container',
     template: `
         <footer class="yoda-chat-footer">
-            <p>By mave&#64;<a href="http://zuehlke.com">zuehlke</a></p>
+            <p>By <a href="mailto:sia@zuehlke.com">sia</a>/<a href="mailto:mave@zuehlke.com">mave</a>&#64;zuehlke.com</p>
         </footer>`,
     styles: [`
         .yoda-chat-footer {

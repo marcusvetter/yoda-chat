@@ -10,7 +10,7 @@ module.exports = function() {
         MESSAGE_INPUT_ID = 'message-input',
         MESSAGE_SEND_BUTTON_ID = 'message-send-btn',
         MESSAGE_CLASS = 'message',
-        JEDI_TAB_ID = 'jedi-tab',
+        HUMAN_TAB_ID = 'human-tab',
         YODA_TAB_ID = 'yoda-tab';
 
     this.Given(/^I open the Yoda Chat with an empty message history$/, function (callback) {
@@ -24,8 +24,8 @@ module.exports = function() {
         callback();
     });
 
-    this.When(/^I switch to the jedi tab$/, function(callback) {
-        element(by.id(JEDI_TAB_ID)).click();
+    this.When(/^I switch to the human tab$/, function(callback) {
+        element(by.id(HUMAN_TAB_ID)).click();
         callback();
     });
 

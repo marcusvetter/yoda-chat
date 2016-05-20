@@ -28,7 +28,7 @@ export class ChatService {
     }
 
     public saveMessage(mode: ChatMode, message: string): Observable<Response> {
-        let chatMessage: ChatMessage = new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'Jedi', Date.now());
+        let chatMessage: ChatMessage = new ChatMessage(message, mode === ChatMode.YODA ? 'Yoda' : 'a human', Date.now());
         return this.http.put(`${ChatService.URL}?mode=${mode}`, JSON.stringify(chatMessage), this.requestOptions);
     }
 
