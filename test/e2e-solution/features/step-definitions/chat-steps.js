@@ -1,10 +1,9 @@
 var chai = require('chai');
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
-
 var expect = chai.expect;
 
-module.exports = function() {
+module.exports = function () {
 
     var CHAT_URL = 'http://localhost:8080',
         CLEAR_CHAT_BUTTON_ID = 'clear-chat-btn',
@@ -28,7 +27,7 @@ module.exports = function() {
         callback();
     });
 
-    this.When(/^As a Yoda I open the chat$/, function(callback) {
+    this.When(/^As a Yoda I open the chat$/, function (callback) {
         openChat();
         element(by.id(YODA_TAB_ID)).click();
         callback();
@@ -40,7 +39,7 @@ module.exports = function() {
         callback();
     });
 
-    this.Then(/^the message "([^"]*)" appears within the chat$/, function (expectedMessage, callback) {
+    this.Then(/^The message "([^"]*)" appears within the chat$/, function (expectedMessage, callback) {
         var messages = element.all(by.css('.' + MESSAGE_CLASS));
         expect(messages.count()).to.eventually.equal(1);
         expect(messages.get(0).getText()).to.eventually.equal(expectedMessage);
