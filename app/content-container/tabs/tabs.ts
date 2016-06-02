@@ -1,12 +1,10 @@
 import {Component, Output, EventEmitter, Input} from "angular2/core";
 import {ChatMode} from "../chat-mode";
 
-const STYLE = require('./tabs.scss');
-
 @Component({
     selector: 'tabs',
-    template: `<style>${STYLE}</style>
-                <div class="yoda-chat-nav-container">
+    styles: [require('./tabs.scss')],
+    template: `<div class="yoda-chat-nav-container">
                     <div class="container">
                         <nav class="nav yoda-chat-nav">
                             <a id="human-tab" href="#" class="nav-link" [ngClass]="{active: isHumanMode()}" (click)="onHumanTabClick()">I am a human</a>

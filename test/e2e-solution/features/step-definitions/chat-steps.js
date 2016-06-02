@@ -1,5 +1,5 @@
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
@@ -13,36 +13,31 @@ module.exports = function () {
         YODA_TAB_ID = 'yoda-tab';
 
     function openChat() {
-        browser.get(CHAT_URL);
+        return browser.get(CHAT_URL);
     }
 
-    this.Given(/^As a human I open the chat with an empty message history$/, function (callback) {
+    this.Given(/^As a human I open the chat with an empty message history$/, function () {
         openChat();
-        element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
-        callback();
+        return element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
     });
 
-    this.Given(/^As a human I open the chat$/, function (callback) {
-        openChat();
-        callback();
+    this.Given(/^As a human I open the chat$/, function () {
+        return openChat();
     });
 
-    this.When(/^As a Yoda I open the chat$/, function (callback) {
-        openChat();
-        element(by.id(YODA_TAB_ID)).click();
-        callback();
+    this.When(/^As a Yoda I open the chat$/, function () {
+        return element(by.id(YODA_TAB_ID)).click();
     });
 
-    this.When(/^I send the chat message "([^"]*)"$/, function (message, callback) {
+    this.When(/^I send the chat message "([^"]*)"$/, function (message) {
         element(by.id(MESSAGE_INPUT_ID)).sendKeys(message);
-        element(by.id(MESSAGE_SEND_BUTTON_ID)).click();
-        callback();
+        return element(by.id(MESSAGE_SEND_BUTTON_ID)).click();
     });
 
-    this.Then(/^The message "([^"]*)" appears within the chat$/, function (expectedMessage, callback) {
+    this.Then(/^The message "([^"]*)" appears within the chat$/, function (expectedMessage) {
         var messages = element.all(by.css('.' + MESSAGE_CLASS));
-        expect(messages.count()).to.eventually.equal(1);
-        expect(messages.get(0).getText()).to.eventually.equal(expectedMessage);
-        callback();
+        expect(messages.count()).to.eventually.greaterThan(0);
+        return expect(messages.get(0).getText()).to.eventually.equal(expectedMessage);
     });
+
 };

@@ -1,5 +1,5 @@
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
+var chai = require("chai");
+var chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
 var expect = chai.expect;
 
@@ -12,27 +12,27 @@ function ChatPage() {
         MESSAGE_CLASS = 'message',
         YODA_TAB_ID = 'yoda-tab';
 
-    this.openChat = function() {
-        browser.get(CHAT_URL);
+    this.openChat = function () {
+        return browser.get(CHAT_URL);
     };
 
-    this.clearMessageHistory = function() {
-        element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
+    this.clearMessageHistory = function () {
+        return element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
     };
 
-    this.switchToYodaTab = function() {
-        element(by.id(YODA_TAB_ID)).click();
+    this.switchToYodaTab = function () {
+        return element(by.id(YODA_TAB_ID)).click();
     };
 
-    this.sendMessage = function(message) {
+    this.sendMessage = function (message) {
         element(by.id(MESSAGE_INPUT_ID)).sendKeys(message);
-        element(by.id(MESSAGE_SEND_BUTTON_ID)).click();
+        return element(by.id(MESSAGE_SEND_BUTTON_ID)).click();
     };
 
     this.verifyMessageExists = function (message) {
         var messages = element.all(by.css('.' + MESSAGE_CLASS));
-        expect(messages.count()).to.eventually.equal(1);
-        expect(messages.get(0).getText()).to.eventually.equal(message);
+        expect(messages.count()).to.eventually.greaterThan(0);
+        return expect(messages.get(0).getText()).to.eventually.equal(message);
     };
 
 }

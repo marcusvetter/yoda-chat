@@ -14,6 +14,6 @@ exports.config = {
     // relevant cucumber command line options
     cucumberOpts: {
         require: 'test/e2e/features/step-definitions/*.js',
-        format: "pretty"
+        format: 'pretty'
     }
 };
