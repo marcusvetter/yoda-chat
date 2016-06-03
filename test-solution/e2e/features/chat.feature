@@ -11,5 +11,5 @@ Feature: Yoda Chat
   Scenario: As a human I send a message that has to be translated for Yoda
     Given As a human I open the chat with an empty message history
     When I send the chat message "Do you know what I am talking about?"
-    And As a Yoda I open the chat
+    And I switch to the Yoda chat
     Then The message "Know what I am talking about, do you? Hmmm...? yes..." appears within the chat

@@ -9,11 +9,7 @@ module.exports = function () {
         return chatPage.clearMessageHistory();
     });
 
-    this.Given(/^As a human I open the chat$/, function () {
-        return chatPage.openChat();
-    });
-
-    this.When(/^As a Yoda I open the chat$/, function () {
+    this.When(/^I switch to the Yoda chat$/, function () {
         return chatPage.switchToYodaTab();
     });
 

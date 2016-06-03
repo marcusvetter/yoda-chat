@@ -21,11 +21,7 @@ module.exports = function () {
         return element(by.id(CLEAR_CHAT_BUTTON_ID)).click();
     });
 
-    this.Given(/^As a human I open the chat$/, function () {
-        return openChat();
-    });
-
-    this.When(/^As a Yoda I open the chat$/, function () {
+    this.When(/^I switch to the Yoda chat$/, function () {
         return element(by.id(YODA_TAB_ID)).click();
     });
 

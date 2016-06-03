@@ -101,7 +101,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvSteps-4-other-steps" value="this.Given(/^As a human I open the chat$/, function () {&#10;    return openChat();&#10;});&#10;&#10;this.When(/^As a Yoda I open the chat$/, function () {&#10;    return element(by.id(YODA_TAB_ID)).click();&#10;});&#10;&#10;this.When(/^I send the chat message &quot;([^&quot;]*)&quot;$/, function (message) {&#10;    element(by.id(MESSAGE_INPUT_ID)).sendKeys(message);&#10;    return element(by.id(MESSAGE_SEND_BUTTON_ID)).click();&#10;});&#10;&#10;this.Then(/^The message &quot;([^&quot;]*)&quot; appears within the chat$/, function (expectedMessage) {&#10;    var messages = element.all(by.css('.' + MESSAGE_CLASS));&#10;    expect(messages.count()).to.eventually.greaterThan(0);&#10;    return expect(messages.get(0).getText()).to.eventually.equal(expectedMessage);&#10;});" toReformat="true" toShortenFQNames="true">
+  <template name="mvSteps-4-other-steps" value="this.When(/^I switch to the Yoda chat$/, function () {&#10;    return element(by.id(YODA_TAB_ID)).click();&#10;});&#10;&#10;this.When(/^I send the chat message &quot;([^&quot;]*)&quot;$/, function (message) {&#10;    element(by.id(MESSAGE_INPUT_ID)).sendKeys(message);&#10;    return element(by.id(MESSAGE_SEND_BUTTON_ID)).click();&#10;});&#10;&#10;this.Then(/^The message &quot;([^&quot;]*)&quot; appears within the chat$/, function (expectedMessage) {&#10;    var messages = element.all(by.css('.' + MESSAGE_CLASS));&#10;    expect(messages.count()).to.eventually.greaterThan(0);&#10;    return expect(messages.get(0).getText()).to.eventually.equal(expectedMessage);&#10;});" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -713,7 +713,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvStepsPageReplace-3" value="this.Given(/^As a human I open the chat$/, function () {&#10;    return chatPage.openChat();&#10;});&#10;&#10;this.When(/^As a Yoda I open the chat$/, function () {&#10;    return chatPage.switchToYodaTab();&#10;});&#10;&#10;this.When(/^I send the chat message &quot;([^&quot;]*)&quot;$/, function (message) {&#10;    return chatPage.sendMessage(message);&#10;});&#10;&#10;this.Then(/^The message &quot;([^&quot;]*)&quot; appears within the chat$/, function (expectedMessage) {&#10;    return chatPage.verifyMessageExists(expectedMessage);&#10;});" toReformat="true" toShortenFQNames="true">
+  <template name="mvStepsPageReplace-3" value="this.When(/^I switch to the Yoda chat$/, function () {&#10;    return chatPage.switchToYodaTab();&#10;});&#10;&#10;this.When(/^I send the chat message &quot;([^&quot;]*)&quot;$/, function (message) {&#10;    return chatPage.sendMessage(message);&#10;});&#10;&#10;this.Then(/^The message &quot;([^&quot;]*)&quot; appears within the chat$/, function (expectedMessage) {&#10;    return chatPage.verifyMessageExists(expectedMessage);&#10;});" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -866,7 +866,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-8-when2" value="When I send the chat message &quot;Do you know what I am talking about?&quot;&#10;And As a Yoda I open the chat" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-8-when2" value="When I send the chat message &quot;Do you know what I am talking about?&quot;&#10;And I switch to the Yoda chat" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
