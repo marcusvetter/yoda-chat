@@ -1,5 +1,5 @@
 <templateSet group="user">
-  <template name="mvSteps-1-function" value="var chai = require(&quot;chai&quot;);&#10;var chaiAsPromised = require(&quot;chai-as-promised&quot;);&#10;chai.use(chaiAsPromised);&#10;var expect = chai.expect;&#10;&#10;module.exports = function() {&#10;&#10;&#10;&#10;};" toReformat="true" toShortenFQNames="true">
+  <template name="mvSteps-1-function" value="var chai = require(&quot;chai&quot;);&#10;var chaiAsPromised = require(&quot;chai-as-promised&quot;);&#10;chai.use(chaiAsPromised);&#10;var expect = chai.expect;&#10;&#10;module.exports = function() {&#10;&#10;    &#10;&#10;};" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
