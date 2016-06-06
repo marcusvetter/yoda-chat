@@ -203,7 +203,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-1-feature" value="Feature: Yoda Chat&#10;  As a user of the yoda chat&#10;  I should be able to chat with humans/Yoda&#10;  to stay in touch with them&#10;&#10;" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-1-feature-scenario1" value="Feature: Yoda Chat&#10;  As a user of the yoda chat&#10;  I should be able to chat with humans/Yoda&#10;  to stay in touch with them&#10;  &#10;  Scenario: As a human I send a simple chat message&#10;    Given As a human I open the chat with an empty message history&#10;    When I send the chat message &quot;Simple Message&quot;&#10;    Then The message &quot;Simple Message&quot; appears within the chat" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -254,160 +254,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-2-scenario" value="Scenario: As a human I send a simple chat message" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="XML_TEXT" value="false" />
-      <option name="JSON" value="false" />
-      <option name="JAVA_CODE" value="false" />
-      <option name="JAVA_STATEMENT" value="false" />
-      <option name="JAVA_EXPRESSION" value="false" />
-      <option name="JAVA_DECLARATION" value="false" />
-      <option name="JAVA_COMMENT" value="false" />
-      <option name="JAVA_STRING" value="false" />
-      <option name="COMPLETION" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="SQL" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="GAUGE" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="true" />
-      <option name="JAVA_SCRIPT" value="false" />
-      <option name="JS_EXPRESSION" value="false" />
-      <option name="JSX_HTML" value="false" />
-      <option name="JS_STATEMENT" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="GROOVY" value="false" />
-      <option name="GROOVY_EXPRESSION" value="false" />
-      <option name="GROOVY_STATEMENT" value="false" />
-      <option name="GROOVY_DECLARATION" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="ASPECTJ" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
-      <option name="MXML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="OGNL" value="false" />
-      <option name="GSP" value="false" />
-      <option name="KOTLIN" value="false" />
-      <option name="KOTLIN_TOPLEVEL" value="false" />
-      <option name="KOTLIN_STATEMENT" value="false" />
-      <option name="KOTLIN_CLASS" value="false" />
-      <option name="KOTLIN_EXPRESSION" value="false" />
-      <option name="KOTLIN_COMMENT" value="false" />
-      <option name="HAML" value="false" />
-      <option name="JADE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="mvFeature-3-given" value="Given As a human I open the chat with an empty message history" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="XML_TEXT" value="false" />
-      <option name="JSON" value="false" />
-      <option name="JAVA_CODE" value="false" />
-      <option name="JAVA_STATEMENT" value="false" />
-      <option name="JAVA_EXPRESSION" value="false" />
-      <option name="JAVA_DECLARATION" value="false" />
-      <option name="JAVA_COMMENT" value="false" />
-      <option name="JAVA_STRING" value="false" />
-      <option name="COMPLETION" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="SQL" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="GAUGE" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="true" />
-      <option name="JAVA_SCRIPT" value="false" />
-      <option name="JS_EXPRESSION" value="false" />
-      <option name="JSX_HTML" value="false" />
-      <option name="JS_STATEMENT" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="GROOVY" value="false" />
-      <option name="GROOVY_EXPRESSION" value="false" />
-      <option name="GROOVY_STATEMENT" value="false" />
-      <option name="GROOVY_DECLARATION" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="ASPECTJ" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
-      <option name="MXML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="OGNL" value="false" />
-      <option name="GSP" value="false" />
-      <option name="KOTLIN" value="false" />
-      <option name="KOTLIN_TOPLEVEL" value="false" />
-      <option name="KOTLIN_STATEMENT" value="false" />
-      <option name="KOTLIN_CLASS" value="false" />
-      <option name="KOTLIN_EXPRESSION" value="false" />
-      <option name="KOTLIN_COMMENT" value="false" />
-      <option name="HAML" value="false" />
-      <option name="JADE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="mvFeature-4-when" value="When I send the chat message &quot;Simple Message&quot;" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="XML_TEXT" value="false" />
-      <option name="JSON" value="false" />
-      <option name="JAVA_CODE" value="false" />
-      <option name="JAVA_STATEMENT" value="false" />
-      <option name="JAVA_EXPRESSION" value="false" />
-      <option name="JAVA_DECLARATION" value="false" />
-      <option name="JAVA_COMMENT" value="false" />
-      <option name="JAVA_STRING" value="false" />
-      <option name="COMPLETION" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="SQL" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="GAUGE" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="true" />
-      <option name="JAVA_SCRIPT" value="false" />
-      <option name="JS_EXPRESSION" value="false" />
-      <option name="JSX_HTML" value="false" />
-      <option name="JS_STATEMENT" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="GROOVY" value="false" />
-      <option name="GROOVY_EXPRESSION" value="false" />
-      <option name="GROOVY_STATEMENT" value="false" />
-      <option name="GROOVY_DECLARATION" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="ASPECTJ" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
-      <option name="MXML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="OGNL" value="false" />
-      <option name="GSP" value="false" />
-      <option name="KOTLIN" value="false" />
-      <option name="KOTLIN_TOPLEVEL" value="false" />
-      <option name="KOTLIN_STATEMENT" value="false" />
-      <option name="KOTLIN_CLASS" value="false" />
-      <option name="KOTLIN_EXPRESSION" value="false" />
-      <option name="KOTLIN_COMMENT" value="false" />
-      <option name="HAML" value="false" />
-      <option name="JADE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="mvFeature-6-scenario2" value="Scenario: As a human I send a message that has to be translated for Yoda" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-2-scenario" value="Scenario: As a human I send a message that has to be translated for Yoda" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -764,7 +611,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-5-then" value="Then The message &quot;Simple Message&quot; appears within the chat" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-3-given" value="Given As a human I open the chat with an empty message history" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -815,7 +662,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-7-given2" value="Given As a human I open the chat with an empty message history" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-4-when" value="When I send the chat message &quot;Do you know what I am talking about?&quot;&#10;And I switch to the Yoda chat" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -866,58 +713,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="mvFeature-8-when2" value="When I send the chat message &quot;Do you know what I am talking about?&quot;&#10;And I switch to the Yoda chat" toReformat="true" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="XML_TEXT" value="false" />
-      <option name="JSON" value="false" />
-      <option name="JAVA_CODE" value="false" />
-      <option name="JAVA_STATEMENT" value="false" />
-      <option name="JAVA_EXPRESSION" value="false" />
-      <option name="JAVA_DECLARATION" value="false" />
-      <option name="JAVA_COMMENT" value="false" />
-      <option name="JAVA_STRING" value="false" />
-      <option name="COMPLETION" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="SQL" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="GAUGE" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="true" />
-      <option name="JAVA_SCRIPT" value="false" />
-      <option name="JS_EXPRESSION" value="false" />
-      <option name="JSX_HTML" value="false" />
-      <option name="JS_STATEMENT" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="GROOVY" value="false" />
-      <option name="GROOVY_EXPRESSION" value="false" />
-      <option name="GROOVY_STATEMENT" value="false" />
-      <option name="GROOVY_DECLARATION" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="ASPECTJ" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
-      <option name="MXML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="OGNL" value="false" />
-      <option name="GSP" value="false" />
-      <option name="KOTLIN" value="false" />
-      <option name="KOTLIN_TOPLEVEL" value="false" />
-      <option name="KOTLIN_STATEMENT" value="false" />
-      <option name="KOTLIN_CLASS" value="false" />
-      <option name="KOTLIN_EXPRESSION" value="false" />
-      <option name="KOTLIN_COMMENT" value="false" />
-      <option name="HAML" value="false" />
-      <option name="JADE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="mvFeature-9-then2" value="Then The message &quot;Know what I am talking about, do you? Hmmm...? yes...&quot; appears within the chat" toReformat="true" toShortenFQNames="true">
+  <template name="mvFeature-5-then" value="Then The message &quot;Know what I am talking about, do you? Hmmm...? yes...&quot; appears within the chat" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
