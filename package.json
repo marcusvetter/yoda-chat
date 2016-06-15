@@ -5,8 +5,8 @@
   "description": "Yoda Chat",
   "scripts": {
     "build": "webpack",
-    "start-backend": "node backend/server",
-    "start-frontend": "webpack-dev-server --hot",
+    "backend": "node backend/server",
+    "frontend": "webpack-dev-server --hot",
     "postinstall": "typings install"
   },
   "repository": {
@@ -27,11 +27,15 @@
     "bootstrap": "^4.0.0-alpha.2"
   },
   "devDependencies": {
+    "body-parser": "^1.15.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
+    "cors": "^2.7.1",
     "css-loader": "^0.23.1",
     "cucumber": "^0.10.3",
+    "express": "^4.13.4",
     "file-loader": "^0.8.5",
+    "lodash": "^4.13.1",
     "node-sass": "^3.4.2",
     "protractor-cucumber-framework": "^0.5.0",
     "raw-loader": "^0.5.1",
